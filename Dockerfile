@@ -12,8 +12,7 @@ RUN apt-get update -y
 # Install git
 RUN apt-get install -y git
 
-# Clone rocksdb
-RUN git clone https://github.com/facebook/rocksdb.git
+
 
 #
 # based on Rocksdb install.md:
@@ -34,11 +33,6 @@ RUN apt-get install -y zlib1g-dev
 # Install bzip2
 RUN apt-get install -y libbz2-dev
 
-# Cd into rocksdb
-RUN cd rocksdb
+# Clone rocksdb
+RUN cd /tmp && git clone https://github.com/facebook/rocksdb.git && cd rocksdb && make clean; make
 
-# clean
-RUN make clean
-
-# make
-RUN make
