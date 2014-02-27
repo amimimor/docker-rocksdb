@@ -34,5 +34,5 @@ RUN apt-get install -y zlib1g-dev
 RUN apt-get install -y libbz2-dev
 
 # Clone rocksdb
-RUN cd /tmp && git clone https://github.com/facebook/rocksdb.git && cd rocksdb && make clean; make
+RUN cd /tmp && git clone https://github.com/facebook/rocksdb.git && cd rocksdb && make clean && make
 
